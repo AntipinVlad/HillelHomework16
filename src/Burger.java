@@ -4,45 +4,42 @@ public class Burger {
     private String cheese;
     private String greens;
     private String mayo;
+    private boolean doubleMeat = false;
 
-    public Burger() {
-        this.bun = "звичайна булочка";
-        this.meat = "звичайне м'ясо";
-        this.cheese = "звичайний сир";
-        this.greens = "звичайна зелень";
-        this.mayo = "звичайний майонез";
+    public Burger(String bun, String meat, String cheese, String greens, String mayo) {
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greens = greens;
+        this.mayo = mayo;
         printBurgerComposition();
     }
 
-    public Burger(boolean isDiet) {
-        this.bun = "дієтична булочка";
-        this.meat = "дієтичне м'ясо";
-        this.cheese = "дієтичний сир";
-        this.greens = "дієтична зелень";
-        if (isDiet) {
-            this.mayo = "без майонезу";
-        } else {
-            this.mayo = "звичайний майонез";
-        }
+    public Burger(String bun, String meat, String cheese, String greens) {
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greens = greens;
         printBurgerComposition();
     }
 
-    public Burger(int doubleMeat) {
-        this.bun = "звичайна булочка";
-        this.meat = "подвійне м'ясо";
-        this.cheese = "звичайний сир";
-        this.greens = "звичайна зелень";
-        this.mayo = "звичайний майонез";
+    public Burger(String bun, String meat, String cheese, String greens, String mayo, Boolean doubleMeat) {
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greens = greens;
+        this.mayo = mayo;
+        this.doubleMeat = doubleMeat;
         printBurgerComposition();
     }
 
     private void printBurgerComposition() {
         System.out.println("Склад бургера:");
-        System.out.println("Булочка: " + bun);
-        System.out.println("М'ясо: " + meat);
-        System.out.println("Сир: " + cheese);
-        System.out.println("Зелень: " + greens);
-        System.out.println("Майонез: " + mayo);
+        System.out.println(bun);
+        System.out.println((doubleMeat ? meat + " (подвійна порція)" : meat));
+        System.out.println(cheese);
+        System.out.println(greens);
+        System.out.println((mayo == null ? "без майонезу" : mayo));
         System.out.println();
     }
 }
