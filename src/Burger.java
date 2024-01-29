@@ -6,6 +6,16 @@ public class Burger {
     private String mayo;
     private boolean doubleMeat = false;
 
+    public Burger(String bun, String meat, String cheese, String greens, String mayo, Boolean doubleMeat) {
+        this.bun = bun;
+        this.meat = meat;
+        this.cheese = cheese;
+        this.greens = greens;
+        this.mayo = mayo;
+        this.doubleMeat = doubleMeat;
+        printBurgerComposition();
+    }
+
     public Burger(String bun, String meat, String cheese, String greens, String mayo) {
         this.bun = bun;
         this.meat = meat;
@@ -23,15 +33,7 @@ public class Burger {
         printBurgerComposition();
     }
 
-    public Burger(String bun, String meat, String cheese, String greens, String mayo, Boolean doubleMeat) {
-        this.bun = bun;
-        this.meat = meat;
-        this.cheese = cheese;
-        this.greens = greens;
-        this.mayo = mayo;
-        this.doubleMeat = doubleMeat;
-        printBurgerComposition();
-    }
+    public Burger() {}
 
     private void printBurgerComposition() {
         System.out.println("Склад бургера:");
